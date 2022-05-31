@@ -17,32 +17,11 @@ public class Conexiones : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataSet accesoAlumno (string usuario,
-                                 string password)
+    public DataSet qryAcceso(string control, string contra, string tipo)
     {
 
         clsConexiones obj = new clsConexiones();
-        return obj.accesoAlumno(usuario, password);
-
-    }
-
-    [WebMethod]
-    public DataSet accesoPersonal(string usuario,
-                                 string password)
-    {
-
-        clsConexiones obj = new clsConexiones();
-        return obj.accesoPersonal(usuario, password);
-
-    }
-
-    [WebMethod]
-    public DataSet accesoAspirante(string usuario,
-                                 string password)
-    {
-
-        clsConexiones obj = new clsConexiones();
-        return obj.accesoAspirante(usuario, password);
+        return obj.qryAcceso(control, contra, tipo);
 
     }
 

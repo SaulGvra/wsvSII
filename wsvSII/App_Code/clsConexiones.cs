@@ -18,6 +18,22 @@ public class clsConexiones
 
     }
 
+    public DataSet qryAcceso(string control, string contra, string tipo)
+    {
+
+        string cadsql = "";
+        cadsql += "call sp_Acceso('" + control + "', " + contra + ", " + tipo + ");";
+
+        MySqlConnection cnn = new MySqlConnection(cadConexion);
+        MySqlDataAdapter da = new MySqlDataAdapter(cadsql, cnn);
+
+        DataSet ds = new DataSet();
+
+        da.Fill(ds, "acceso");
+        return ds;
+
+    }
+
     public DataSet insCarrera(string carrera)
     {
 
@@ -313,57 +329,6 @@ public class clsConexiones
         DataSet ds = new DataSet();
 
         da.Fill(ds, "delBajaPersonal");
-        return ds;
-
-    }
-
-    public DataSet accesoAlumno (string usuario,
-                                 string password)
-    {
-
-        string cadsql = "";
-        cadsql += "call sp_AccesoAlumno('" + usuario + "', '" + password + "');";
-
-        MySqlConnection cnn = new MySqlConnection(cadConexion);
-        MySqlDataAdapter da = new MySqlDataAdapter(cadsql, cnn);
-
-        DataSet ds = new DataSet();
-
-        da.Fill(ds, "accesoAlumno");
-        return ds;
-
-    }
-
-    public DataSet accesoPersonal(string usuario,
-                                  string password)
-    {
-
-        string cadsql = "";
-        cadsql += "call sp_AccesoPersonal('" + usuario + "', '" + password + "');";
-
-        MySqlConnection cnn = new MySqlConnection(cadConexion);
-        MySqlDataAdapter da = new MySqlDataAdapter(cadsql, cnn);
-
-        DataSet ds = new DataSet();
-
-        da.Fill(ds, "accesoPersonal");
-        return ds;
-
-    }
-
-    public DataSet accesoAspirante(string usuario,
-                                   string password)
-    {
-
-        string cadsql = "";
-        cadsql += "call sp_AccesoAspirante('" + usuario + "', " + password + ");";
-
-        MySqlConnection cnn = new MySqlConnection(cadConexion);
-        MySqlDataAdapter da = new MySqlDataAdapter(cadsql, cnn);
-
-        DataSet ds = new DataSet();
-
-        da.Fill(ds, "accesoAspirante");
         return ds;
 
     }

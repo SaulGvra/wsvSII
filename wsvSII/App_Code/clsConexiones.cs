@@ -77,8 +77,7 @@ public class clsConexiones
 
     }
 
-    public DataSet insAspirante (string aspiranteid,
-                                 string nip,
+    public DataSet insAspirante (
                                  string nombre,
                                  string paterno,
                                  string materno,
@@ -89,7 +88,7 @@ public class clsConexiones
     {
 
         string cadsql = "";
-        cadsql += "call sii_insAspirante('" + aspiranteid + "', " + nip + ", '" + nombre + "', '" + paterno + "', '" + materno + "', " + tel + ", '" + fecha + "', '" + dir + "', " + carrera + ");";
+        cadsql += "call sii_insAspirante('" + nombre + "', '" + paterno + "', '" + materno + "', " + tel + ", '" + fecha + "', '" + dir + "', " + carrera + ");";
 
         MySqlConnection cnn = new MySqlConnection(cadConexion);
         MySqlDataAdapter da = new MySqlDataAdapter(cadsql, cnn);

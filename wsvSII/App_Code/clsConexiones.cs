@@ -22,7 +22,7 @@ public class clsConexiones
     {
 
         string cadsql = "";
-        cadsql += "call sp_Acceso('" + control + "', " + contra + ", " + tipo + ");";
+        cadsql += "call sp_Acceso('" + control + "', " + contra + ", '" + tipo + "');";
 
         MySqlConnection cnn = new MySqlConnection(cadConexion);
         MySqlDataAdapter da = new MySqlDataAdapter(cadsql, cnn);

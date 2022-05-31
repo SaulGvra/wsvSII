@@ -454,4 +454,18 @@ public class clsConexiones
         return ds;
     }
 
+    //Método para consultar información del alumno
+    public DataSet qryinfoalumno()
+    {
+        // Definición de variables
+        string cadsql = "select * from vw_InfoAlumno";
+        MySqlConnection cnn = new MySqlConnection(cadConexion);
+        MySqlDataAdapter da = new MySqlDataAdapter(cadsql, cnn);
+        DataSet ds = new DataSet();
+        // Ejecición del adaptador para recibir el grupo de datos
+        da.Fill(ds, "InfoAlumno");
+        return ds;
+
+    }
+
 }

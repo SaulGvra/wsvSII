@@ -303,4 +303,11 @@ public class Conexiones : System.Web.Services.WebService
         return obj.updPersonalMaestro(nombre, paterno, materno, telefono, fecha, direccion, personall, tipo);
     }
 
+    [WebMethod]
+    public DataSet qryinfoalumno()
+    {
+        clsConexiones obj = new clsConexiones();
+        return obj.qryinfoalumno();
+    }
+
 }

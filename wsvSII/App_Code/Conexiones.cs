@@ -55,8 +55,7 @@ public class Conexiones : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataSet insAspirante(string aspiranteid,
-                                string nip,
+    public DataSet insAspirante(
                                 string nombre,
                                 string paterno,
                                 string materno,
@@ -67,7 +66,7 @@ public class Conexiones : System.Web.Services.WebService
     {
 
         clsConexiones obj = new clsConexiones();
-        return obj.insAspirante(aspiranteid, nip, nombre, paterno, materno, tel, fecha, dir, carrera);
+        return obj.insAspirante(nombre, paterno, materno, tel, fecha, dir, carrera);
 
     }
 
@@ -244,7 +243,7 @@ public class Conexiones : System.Web.Services.WebService
                                string direccion)
     {
         clsConexiones obj = new clsConexiones();
-        return obj.updAlumno(noaspirante, nombre, paterno, materno, telefono, fecha, direccion);
+        return obj.updAspirante(noaspirante, nombre, paterno, materno, telefono, fecha, direccion);
     }
 
     [WebMethod]
